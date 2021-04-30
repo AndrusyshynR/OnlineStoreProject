@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./src/style/style.css">
+	<title>F1-Store</title>
+</head>
+
+<body>
+	<header class="header">
+		<section class="container navigation">
+			<div class="logo">
+				<a href="./index.html"><img class="logo-img" src="./src/img/logo.png" alt="img-logo"></a>
+			</div>
+
+			<nav class="header__nav">
+				<ul class="menu__list">
+					<li>
+						<a class="menu__link" href="#">главная</a>
+					</li>
+					<li>
+						<a class="menu__link" href="#">о нас</a>
+					</li>
+					<li>
+						<a class="menu__link" href="#">контакты</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="basket">
+				<a href="./basket.html"><img class="basket-img" src="./src/img/basket.png" alt="basket"></a>
+				<div class="basket-res"></div>
+			</div>
+		</section>
+	</header>
+
+	<section class="search">
+		<div class="search-nav container">
+			<select class="search-sel">
+				<option value="AZ">По цене от большего</option>
+				<option value="ZA">По цене от меньшего</option>
+			</select>
+			<input class="search-inp" type="text" name="" placeholder="Поиск товара">
+		</div>
+	</section>
+
+	<section class="produkt">
+		<h1>Товар</h1>
+		<div class="produkt-card out container"></div>
+	</section>
+
+	<footer class="footer">
+		<div class="text">
+			<h2 class="titl-footer">Online Store 2021</h2>
+		</div>
+	</footer>
+
+	<script src="./src/js/main.js"></script>
+	<script src="./src/js/sort.js"></script>
+</body>
+
+</html>

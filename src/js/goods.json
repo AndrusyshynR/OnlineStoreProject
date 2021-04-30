@@ -1,0 +1,78 @@
+
+{
+	"001": {
+		"name": "Кепка",
+		"cost": 200,
+		"img": "./src/img/img-goods/cap.png"
+	},
+	"002": {
+		"name": "Футболка",
+		"cost": 340,
+		"img": "./src/img/img-goods/T-shirt1.png"
+	},
+	"003": {
+		"name": "Худи",
+		"cost": 500,
+		"img": "./src/img/img-goods/hoodie.png"
+	},
+	"004": {
+		"name": "Футболка",
+		"cost": 400,
+		"img": "./src/img/img-goods/T-shirt2.png"
+	},
+	"005": {
+		"name": "Кепка",
+		"cost": 250,
+		"img": "./src/img/img-goods/cap2.png"
+	},
+	"006": {
+		"name": "Худи",
+		"cost": 670,
+		"img": "./src/img/img-goods/hoodie1.png"
+	},
+	"007": {
+		"name": "Футболка",
+		"cost": 550,
+		"img": "./src/img/img-goods/T-shirt.png"
+	},
+	"008": {
+		"name": "Часы Pro",
+		"cost": 1400,
+		"img": "./src/img/img-goods/wristwatch1.png"
+	},
+	"009": {
+		"name": "Футболка",
+		"cost": 400,
+		"img": "./src/img/img-goods/T-shirt2.png"
+	},
+	"010": {
+		"name": "Часы Sport",
+		"cost": 1100,
+		"img": "./src/img/img-goods/wristwatch.png"
+	},
+	"011": {
+		"name": "Худи",
+		"cost": 670,
+		"img": "./src/img/img-goods/hoodie1.png"
+	},
+	"012": {
+		"name": "Футболка",
+		"cost": 550,
+		"img": "./src/img/img-goods/T-shirt.png"
+	},
+	"013": {
+		"name": "Часы Sport",
+		"cost": 1100,
+		"img": "./src/img/img-goods/wristwatch.png"
+	},
+	"014": {
+		"name": "Кепка",
+		"cost": 800,
+		"img": "./src/img/img-goods/cap1.png"
+	},
+	"015": {
+		"name": "Часы Pro",
+		"cost": 1400,
+		"img": "./src/img/img-goods/wristwatch1.png"
+	}
+}
