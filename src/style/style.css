@@ -4,10 +4,6 @@
 	box-sizing: border-box;
 }
 
-/* body {
-	background: brown;
-} */
-
 ul, li, a {
 	list-style: none;
 	text-decoration: none;
@@ -61,6 +57,14 @@ ul, li, a {
 .basket {
 	display: flex;
 	align-items: center;
+}
+
+.basket__name {
+	font-size: 18px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-right: 10px;
 }
 
 .basket-img {
@@ -167,9 +171,15 @@ h1 {
 	margin-left: 10px;
 }
 
-.name {
+.link-name {
 	font-size: 20px;
 	color: #fff;
+}
+
+.link-name:hover {
+	font-size: 22px;
+	color: #c10000;;
+	text-decoration: underline;
 }
 
 .card-nav {
@@ -216,7 +226,7 @@ h1 {
 	transition: .6s;
 }
 
-/* -----Backet.html----- */
+/*! -----Backet.html----- */
 .basket-store {
 	background: #cfcbcb;
 	width: 100%;
@@ -252,6 +262,10 @@ h1 {
 	cursor: pointer;
 }
 
+.name-goods-backet {
+	width: 250px;
+}
+
 .img-arrbasket {
 	display: block;
 	width: 50px;
@@ -262,3 +276,6 @@ h1 {
 	font-size: 20px;
 	color: #fff;
 }
+
+/*! -----product.html----- */
+
