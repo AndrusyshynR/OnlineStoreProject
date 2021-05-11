@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		function openProductNewWindow(e) {
 			var artikulProduct = e.target.dataset.ar;
-			console.log(artikulProduct);
+			// console.log(artikulProduct);
 
 			var productView = document.querySelector('.product-view');
 			console.log(productView);
