@@ -1,52 +1,58 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 	//Корзина
-	var arrBasket = {};
+	let arrBasket = {};
 
 	(async () => {
-		var response = await fetch('./src/js/goods.json');
-		var goods = await response.json();
+		const response = await fetch('./src/js/goods.json');
+		let goods = await response.json();
 
 		checkBasket();
 		displayArrBasket(goods);
-		blockPaymentGoods();
 
 		//Отрисовка товара в корзине
 		function displayArrBasket(arrGoods) {
-			for (var key in arrBasket) {
+			const arrAllSum = [];
+
+			for (let key in arrBasket) {
 				//Вычисляю сумму товара 
 				let sum = `${arrBasket[key]}` * `${arrGoods[key].cost}`;
+				arrAllSum.push(sum);
 
-				var basketProdukt = document.querySelector('.basket-store');
-				var produktDiv = document.createElement('div');
+				let basketProdukt = document.querySelector('.basket-store');
+				let produktDiv = document.createElement('div');
 
-				var newPostBasket = `<div class="basket-produkt">
-			<button class="all-btns delite-all" data-art="${key}">X</button>
-			<p class="name-goods-backet">Почти твоя ${arrGoods[key].name}</p>
+				let newPostBasket = `<div class="basket-produkt">
+			<p class="name-goods-backet">Your ${arrGoods[key].name}</p>
 			<img class="img-arrbasket" src="${arrGoods[key].img}">
-			<p>${arrBasket[key]}</p>
-			<span class="sum">${sum}грн</span>
-			<button class="all-btns minus-product" data-art="${key}">-</button>
-			<button class="all-btns add-product" data-art="${key}">+</button>
+			<span class="sum">${sum}$</span>
+			<button class="all-btns minus-product" data-art="${key}">minus</button>
+			<p class="sum quantity">${arrBasket[key]}</p>
+			<button class="all-btns add-product" data-art="${key}">add</button>
+			<button class="all-btns delite-all" data-art="${key}">delete</button>
 			</div>`
 
 				produktDiv.innerHTML = newPostBasket;
-				basketProdukt.appendChild(produktDiv); //! перезатирать а не добавлять
-			}
-		};
+				basketProdukt.appendChild(produktDiv);
+			};
 
-		//Блок оплата товара
-		function blockPaymentGoods() {
-			var basketProdukt = document.querySelector('.basket-store');
-			var paymentDiv = document.createElement('div');
+			let allSum = arrAllSum.reduce((acc, allValue) => acc + allValue);
 
-			var paymentNav = `<div class="payment-goods">
-				<button class="btn-payment" type="button">Оплатить товар</button>
-				<span class="sum-payment">${0}</span>
+			//Блок оплата товара
+			function blockPaymentGoods() {
+				let basketProdukt = document.querySelector('.basket-store');
+				let paymentDiv = document.createElement('div');
+
+				let paymentNav = `<div class="payment-goods">
+				<button class="btn-payment" type="button">Payment for goods</button>
+				<span class="sum-payment">${allSum}$</span>
 			</div>`
 
-			paymentDiv.innerHTML = paymentNav;
-			basketProdukt.appendChild(paymentDiv);
+				paymentDiv.innerHTML = paymentNav;
+				basketProdukt.appendChild(paymentDiv);
+			};
+
+			blockPaymentGoods();
 		};
 
 		//Оплата товара
@@ -64,52 +70,49 @@ document.addEventListener('DOMContentLoaded', function () {
 			};
 
 			localStorage.removeItem('arrBasket');
-
-			setTimeout(function() {
+			
+			setTimeout(function () {
 				popup.classList.remove('popup-show');
+				location.reload();
 			}, 3000);
 		};
 
 		//Удаление товара с корзины
-		var deliteGoods = document.querySelectorAll('.delite-all');
-		for (var i = 0; i < deliteGoods.length; i++) {
+		let deliteGoods = document.querySelectorAll('.delite-all');
+		for (let i = 0; i < deliteGoods.length; i++) {
 			deliteGoods[i].addEventListener('click', delGoods);
 		};
 
 		function delGoods(event) {
-			var articul = event.target.dataset.art;
+			let articul = event.target.dataset.art;
 			delete arrBasket[articul];
 
 			saveArrBasketLs();
-			// displayArrBasket();
-
-			location.reload();
+			displayArrBasket(location.reload());
 		};
 
 		//Прибавление товара в корзине
-		var btnAdd = document.querySelectorAll('.add-product');
-		for (var i = 0; i < btnAdd.length; i++) {
+		let btnAdd = document.querySelectorAll('.add-product');
+		for (let i = 0; i < btnAdd.length; i++) {
 			btnAdd[i].addEventListener('click', addGoods);
 		};
 
 		function addGoods(event) {
-			var articul = event.target.dataset.art;
+			let articul = event.target.dataset.art;
 			arrBasket[articul]++;
 
 			saveArrBasketLs();
-			// displayArrBasket();
-
-			location.reload();
+			displayArrBasket(location.reload());
 		};
 
 		//Отбавление количества товара в корзине
-		var btnMinus = document.querySelectorAll('.minus-product');
-		for (var i = 0; i < btnMinus.length; i++) {
+		let btnMinus = document.querySelectorAll('.minus-product');
+		for (let i = 0; i < btnMinus.length; i++) {
 			btnMinus[i].addEventListener('click', minusGoods);
 		};
 
 		function minusGoods(event) {
-			var articul = event.target.dataset.art;
+			let articul = event.target.dataset.art;
 
 			if (arrBasket[articul] > 1) {
 				arrBasket[articul]--;
@@ -118,9 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 
 			saveArrBasketLs();
-			// displayArrBasket();
-
-			location.reload();
+			displayArrBasket(location.reload());
 		};
 
 	})();
@@ -138,7 +139,5 @@ document.addEventListener('DOMContentLoaded', function () {
 	};
 
 });
+
 console.log('backet--->', 'backet');
-
-
-//todo 1. В корзине сделать общею сумму за весь товар.

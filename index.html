@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./src/style/style.css">
+	<link rel="shortcut icon" href="./src/img/fiv.jpg" type="image/x-icon">
 	<title>F1-Store</title>
 </head>
 
@@ -18,7 +19,7 @@
 			<nav class="header__nav">
 				<ul class="menu__list">
 					<li>
-						<a class="menu__link" href="#">our goods</a>
+						<a class="menu__link" href="./index.html">our goods</a>
 					</li>
 					<li>
 						<a class="menu__link" href="#">about us</a>
@@ -40,16 +41,16 @@
 	<section class="search">
 		<div class="search-nav container">
 			<select class="search-sel">
-				<option value="default">По умолчанию</option>
-				<option value="AZ">От дорогих к дешевым</option>
-				<option value="ZA">От дешевого к дорогому</option>
+				<option value="popular">Popular</option>
+				<option value="more-less">From expensive to cheap</option>
+				<option value="less-more">From cheap to expensive</option>
 			</select>
-			<input class="search-inp" type="text" name="" placeholder="Поиск товара">
+			<input class="search-inp" type="text" name="" placeholder="Search">
 		</div>
 	</section>
 
 	<section class="produkt">
-		<h1>Товар</h1>
+		<h1>Our production</h1>
 		<div class="produkt-card out container"></div>
 	</section>
 
@@ -60,7 +61,6 @@
 	</footer>
 
 	<script src="./src/js/main.js"></script>
-	<!-- <script src="./src/js/sort.js"></script> -->
 </body>
 
 </html>
